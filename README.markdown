@@ -66,61 +66,61 @@ Tendo isto em mente, o escopo inicial da linguagem teve as seguintes adições:
 
   * _Strings_: Suporte à impressão na saída padrão de strings literais, com o intuito de facilitar o processo de debug de um programa MiniJava. Exemplo:
 
-    public static void main(String[] a) {
+      public static void main(String[] a) {
         System.out.print("Statement A");
-    }
+      }
 
   * _Main_: Relaxamento das restrições nos statements presentes no método main. O projeto original impôe que o método main só contêm uma instrução System.out.println. Exemplo:
 
-    class VTTest {
-      public static void main(String[] args) {
-        Tester t = new Tester();
-        t.test(new A());
-        t.test(new B());
+      class VTTest {
+        public static void main(String[] args) {
+            Tester t = new Tester();
+            t.test(new A());
+            t.test(new B());
+        }
       }
-    }
 
   * _Declarações_: Possibilidade de declarações de múltiplas variáveis de um mesmo tipo numa mesma unidade, assim como inicialização. Exemplo:
 
-    int x, y = 3, z = y + 1;
-    int[] v = new int[30];
+      int x, y = 3, z = y + 1;
+      int[] v = new int[30];
 
   * _For_: Adição do comando for tradicional. Exemplo:
 
-    for (b = 0, a = 10; b <= a; b = b + 1, a = a - 1) {
-      System.out.println(b);
-    }
+      for (b = 0, a = 10; b <= a; b = b + 1, a = a - 1) {
+        System.out.println(b);
+      }
 
   * _Aritmética_: Adição da operação de divisão, assim como o comando de atribuição composto. Exemplo:
 
-    public static void main(String[] args) {
-      a = 20;
-      b = 2;
-      System.out.println(a/b);
-      a += 4;
-      a -= 2;
-      b *= 2;
-      ++a;
-      System.out.println(a++);
-      System.out.println(++b);
-      System.out.println(a);
-    }
+      public static void main(String[] args) {
+        a = 20;
+        b = 2;
+        System.out.println(a/b);
+        a += 4;
+        a -= 2;
+        b *= 2;
+        ++a;
+        System.out.println(a++);
+        System.out.println(++b);
+        System.out.println(a);
+      }
 
   * _Operadores booleanos_: O projeto original só contava com a comparação "menor que" (<) e o "and" lógico (&&). Foram adicionados: <=, >, >=, ==, !=, || (com os significados usuais vistos em Java).
 
   * _Chamada de método_: A gramática original contêm restrições rígidas para chamadas de método. Entre elas: uma chamada de método não é um comando (somente uma expressão) e métodos na classe atual precisam de this explícito na chamada (this.metodo()). Tais restrições foram removidas. Exemplo:
 
-    methodA();
-    obj.methodB(i, j, k);
+      methodA();
+      obj.methodB(i, j, k);
 
-    if (methodC(2)) {
-    }
-    else {
-    }
+      if (methodC(2)) {
+      }
+      else {
+      }
 
   * _Incremento / decremento_: Adição de expressões tais como: ++x, --y, x++, y--. Também podem ser usadas como comandos. Exemplo:
 
-    for (x = 0; x <= y; ++x, --y) { }
+      for (x = 0; x <= y; ++x, --y) { }
 
 
 JVM
@@ -231,8 +231,8 @@ Em cima desta representação, foram implementadas algumas otimizações básica
 
   * _Reescrita de instruções_: Algumas instruções são reescritas para diminuir a complexidade do código gerado, sempre que possível. Exemplo:
 
-    goto L;  // elimina o goto
-    L:
+      goto L;  // elimina o goto
+      L:
 
   * _Análise de vida_ : O compilador realiza uma [análise de vida das variáveis](http://en.wikipedia.org/wiki/Live_variable_analysis) simplificada. Ela trabalha montando o [grafo de fluxo de controle](http://en.wikipedia.org/wiki/Control_flow_graph) do procedimento atual. Estas informações serão utilizadas na geração de código.
     * Primeiramente, monta o grafo considerando os nós como sendo os blocos básicos, e as arestas como o fluxo do programa (jumps entre blocos e blocos executados sequencialmente).
@@ -374,3 +374,4 @@ Bugs, testes, contribuições
 ---------------------------
 
 O compilador vem sendo testado com os programas disponíveis na página do projeto do [MiniJava](http://www.cambridge.org/us/features/052182060X/index.html). Na revisão mais recente, ambos os backends passam em todos os testes utilizados. Mesmo assim, o código ainda pode conter bugs. Qualquer bug pode ser reportado para `giulianoxt@gmail.com`. Qualquer contribuição ou idéia nova para implementação no compilador também será bem vinda.
+
