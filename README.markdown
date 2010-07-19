@@ -65,7 +65,6 @@ O projeto original da MiniJava contêm diversas restrições (com relação à J
 Tendo isto em mente, o escopo inicial da linguagem teve as seguintes adições:
 
   * _Strings_: Suporte à impressão na saída padrão de strings literais, com o intuito de facilitar o processo de debug de um programa MiniJava. Exemplo:
-
       public static void main(String[] a) {
         System.out.print("Statement A");
       }
