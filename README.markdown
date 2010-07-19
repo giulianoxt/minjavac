@@ -374,3 +374,4 @@ Bugs, testes, contribuições
 ---------------------------
 
 O compilador vem sendo testado com os programas disponíveis na página do projeto do [MiniJava](http://www.cambridge.org/us/features/052182060X/index.html). Na revisão mais recente, ambos os backends passam em todos os testes utilizados. Mesmo assim, o código ainda pode conter bugs. Qualquer bug pode ser reportado para `giulianoxt@gmail.com`. Qualquer contribuição ou idéia nova para implementação no compilador também será bem vinda.
+
